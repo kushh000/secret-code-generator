@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Message Result</h1>
+        <div class="result">
+            <strong>Converted Text:</strong>
+            <p id="resultText" onclick="copyResult()">{{ result }}</p>
+        </div>
+        <a href="/">🔁 Go Back</a>
+    </div>
+
+    <script>
+        function copyResult() {
+            const text = document.getElementById("resultText").innerText;
+            navigator.clipboard.writeText(text);
+            alert("Copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
